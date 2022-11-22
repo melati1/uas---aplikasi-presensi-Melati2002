@@ -2,14 +2,14 @@
 require "admin/connect_db.php";
 
 $pwd = sha1($password);
-$create = date('d-m-Y');
+$date_created_ = date('d-m-Y');
 $modified = $date_created;
 
 
 
 
 $sql = "INSERT INTO user (email, name, password, role, date_created, date_modified)
-VALUES ('$email', '$name', '$pwd','$role','date_created','$modified')";
+VALUES ('$email', '$name', '$pwd','$role','$date_created','$modified')";
 
 
 if (mysqli_query($conn, $sql)) {

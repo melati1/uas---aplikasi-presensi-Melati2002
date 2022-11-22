@@ -9,7 +9,7 @@ if (mysqli_query($conn, $sql)) {
         header('Location: tables_user.php');
         ob_end_flush();
     } else {
-        echo "<script>alert('Data berhasil dihapus.');window.location='tables_user.php';</script>";
+        echo "<script>alert('Data berhasil dihapus.');window.location='table_user.php';</script>";
     }
 } else {
     echo "Error deleting record: " . mysqli_error($conn);

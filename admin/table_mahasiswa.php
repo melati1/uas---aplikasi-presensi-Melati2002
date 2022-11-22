@@ -7,7 +7,7 @@ if (isset($_SESSION['login']) && $_SESSION['role'] == "Admin") { //jika sudah lo
 } else if (isset($_SESSION['login']) && $_SESSION['role'] == "Dosen") {
     header("Location: frontend/index.php");
 } else {
-    die("Anda belum login! Anda tidak berhak masuk ke halaman ini.Silahkan login <a href='login.php'>di sini</a>");
+    die("Anda belum login! Anda tidak berhak masuk ke halaman ini.Silahkan login <a href='uas---aplikasi-presensi-Melati2002/index.php.'>di sini</a>");
 
 }
 
@@ -75,7 +75,7 @@ $result1 = mysqli_query($conn, $sql2);
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+          <a class="dropdown-item" href="uas---aplikasi-presensi-Melati2002/index.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
         </div>
       </li>
     </ul>
@@ -87,7 +87,7 @@ $result1 = mysqli_query($conn, $sql2);
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="admin.php">
+        <a class="nav-link" href="page_admin.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -110,15 +110,20 @@ $result1 = mysqli_query($conn, $sql2);
       </li> -->
       <li class="nav-item">
       <li class="nav-item active">
-        <a class="nav-link" href="mahasiswa.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Data Mahasiswa</span></a>
+        <a class="nav-link" href="table_mahasiswa.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Table Mahasiswa</span></a>
       </li>
       <li class="nav-item">
-                <a class="nav-link" href="tables_user.php">
+                <a class="nav-link" href="table_user.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tabel User</span></a>
             </li>
+            <li class="nav-item active">
+        <a class="nav-link" href="table_presensi.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Table Presensi</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
@@ -133,7 +138,7 @@ $result1 = mysqli_query($conn, $sql2);
           <li class="breadcrumb-item active">Data Mahasiswa</li>
         </ol>
         <ol>
-          <a href="form_addmahasiswa.php"><button type="button" class="btn btn-primary">Add Student</button></a>
+          <a href="form_addmahasiswa.php"><button type="button" class="btn btn-primary">Add Mahasiswa</button></a>
         </ol>
 
         <!-- Icon Cards
@@ -214,7 +219,7 @@ $result1 = mysqli_query($conn, $sql2);
             Data Mahasiswa</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" height="10% cellspacing="0">
+              <table class="table table-bordered" id="dataTable" width="100%" height="10% cellspacing=0">
                 <thead>
                   <tr>
                     <th>No</th>
@@ -242,8 +247,8 @@ $result1 = mysqli_query($conn, $sql2);
                         <td><?php echo $row['nim']; ?></td>
                         <td><?php echo $row['kelas'] ?></td>
                         <td>
-                          <a href="admin_mahasiswa_edit.php?id=<?php echo $row['nim']; ?>">Edit</a> |
-                          <a href="proses_hapus.php?id=<?php echo $row['nim']; ?>" onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a>
+                          <a href="edit_mahasiswa.php?id=<?php echo $row['nim']; ?>">Edit</a> |
+                          <a href="delete_mahasiswa.php?id=<?php echo $row['nim']; ?>" onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a>
                         </td>
                     </tr>
                        
@@ -255,7 +260,7 @@ $result1 = mysqli_query($conn, $sql2);
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted"></div>
         </div>
 
       </div>
@@ -265,7 +270,7 @@ $result1 = mysqli_query($conn, $sql2);
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
+            <!-- <span>Copyright © Your Website 2019</span> -->
           </div>
         </div>
       </footer>
@@ -294,7 +299,7 @@ $result1 = mysqli_query($conn, $sql2);
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="\uas---aplikasi-presensi-AbangMuhammadFajar/index.php">Logout</a>
+          <a class="btn btn-primary" href="\uas---aplikasi-presensi-Melati2002/index.php">Logout</a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 require('connect_db.php');
 
-$nim = $_GET['nim'];
+$nim = $_GET['id'];
 $query = "DELETE FROM mahasiswa WHERE nim = '$nim' ";
 $hasil_query = mysqli_query($conn, $query);
 

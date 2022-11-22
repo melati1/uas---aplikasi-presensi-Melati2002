@@ -79,39 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $role = test_input($_POST["role"]);
         $valid_role = true;
     }
-
-    // $nama_file = $_FILES['file']['name'];
-    // $dir_upload = "images/";
-    // $target_file = $dir_upload . basename($_FILES["file"]["name"]);
-
-    // // Select file type
-    // $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    // // Valid file extensions
-    // $extensions_arr = array("jpg", "jpeg", "png", "gif");
-
-    // // Check extension
-    // if (in_array($imageFileType, $extensions_arr)) {
-    //     // Upload file
-    //     move_uploaded_file($_FILES['file']['tmp_name'], $dir_upload . $nama_file);
-    //     // Insert record
-    //     $valid_image = true;
-    // } else {
-    //     $imageErr = "File photo is required";
-    //     $valid_image = false;
-
-    // }
-    // $dir_upload = "images/";
-    // $nama_file = $_FILES['file']['name'];
-
-    // if (is_uploaded_file($_FILES['file']['tmp_name'])) {
-    //     $cek = move_uploaded_file($_FILES['file']['tmp_name'], //source
-    //         // tujuan
-
-    //         $dir_upload . $nama_file);
-
-    // }
-
 }
 
 function test_input($data)
@@ -161,7 +128,7 @@ function test_input($data)
                                 <input type="text" id="fullName" class="form-control" placeholder="full name"
                                     required="required" autofocus="autofocus" name='name'>                                
                             </div>
-
+                            <span class="error">* <?php echo $nameErr; ?></span>    
 
                         </div>
                         <div class="form-group">
@@ -182,6 +149,7 @@ function test_input($data)
                                             placeholder="Password" required="required" name="password">
                                         
                                     </div>
+                                    <span class="error">* <?php echo $passwordErr; ?></span>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-label-group">
@@ -189,6 +157,7 @@ function test_input($data)
                                         <input type="password" id="confirmPassword" class="form-control"
                                             placeholder="Confirm password" required="required" name="repeatpassword">
                                     </div>
+                                    <span class="error">* <?php echo $repeatpasswordErr; ?></span>
                                 </div>
                             </div>
 

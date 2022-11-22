@@ -90,7 +90,7 @@ if ($cek2 > 0) {
 }
 ?>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="inex.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                        <a class="dropdown-item" href="uas---aplikasi-presensi-Melati2002/index.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
                     </div>
             </li>
         </ul>
@@ -108,14 +108,19 @@ if ($cek2 > 0) {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="mahasiswa.php">
+                <a class="nav-link" href="table_mahasiswa.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Data Mahasiswa</span></a>
+                    <span>Table Mahasiswa</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="tables_user.php">
+                <a class="nav-link" href="table_user.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tabel User</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="table_presensi.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Table Presensi</span></a>
             </li>
         </ul>
 
@@ -133,7 +138,7 @@ if ($cek2 > 0) {
                     <li class="breadcrumb-item active">Tables</li>
                 </ol>
                 <ol>
-                    <a href="register.php"><button type="button" class="btn btn-primary">Add
+                    <a href="/uas---aplikasi-presensi-Melati2002/register.php"><button type="button" class="btn btn-primary">Add
                             User</button></a>
                 </ol>
 
@@ -168,11 +173,14 @@ if (mysqli_num_rows($result) > 0) {
                                         <td><?php echo $row['email'] ?></td>
 
                                         <td>
-                                            <a href='form_update_user.php?email=<?php echo $row['email'] ?>'><i
+                                            <!-- <a href='form_update_user.php?email=<?php echo $row['email'] ?>'><i
                                                     class="bi bi-pen"></i></a> |
                                             <a onclick="return confirm ('Are you sure ?')"
                                                 href='delete_user.php?email=<?php echo $row['email'] ?>'><i
-                                                    class="bi bi-trash"></i></a>
+                                                    class="bi bi-trash"></i></a> -->
+
+                                            <a href='form_update_user.php?email=<?php echo $row['email'] ?>'>Edit</a> |  
+                                            <a href='delete_user.php?email=<?php echo $row['email'] ?>' onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a>     
                                         </td>
 
 
@@ -209,7 +217,7 @@ mysqli_close($conn);
                 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright © Your Website 2022</span>
+                            <!-- <span>Copyright © Your Website 2022</span> -->
                         </div>
                     </div>
                 </footer>

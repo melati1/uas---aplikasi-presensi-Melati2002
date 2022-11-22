@@ -127,15 +127,20 @@ if ($cek2 > 0) {
         </div>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="mahasiswa.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Data Mahasiswa</span></a>
+        <a class="nav-link" href="table_mahasiswa.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Table Mahasiswa</span></a>
       </li>
       <li class="nav-item ">
-                <a class="nav-link" href="tables_user.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Table Users</span></a>
-            </li>
+          <a class="nav-link" href="table_user.php">
+            <i class="fas fa-fw fa-table"></i>
+          <span>Table Users</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="table_presensi.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Table Presensi</span></a>
+      </li>
     </ul>
     
 
@@ -151,16 +156,16 @@ if ($cek2 > 0) {
         </ol>
 
         <!-- Icon Cards-->
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-l-3 col-sm-4 mb-1">
             <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
-                <div class="mr-5">Data Mahasiswa</div>
+                <div class="mr-5">Table Mahasiswa</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="mahasiswa.php">
+              <a class="card-footer text-white clearfix small z-1" href="table_mahasiswa.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -178,7 +183,7 @@ if ($cek2 > 0) {
                 </div>
                 <div class="mr-5">Table User</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="tables_user.php">
+              <a class="card-footer text-white clearfix small z-1" href="table_user.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -186,7 +191,7 @@ if ($cek2 > 0) {
               </a>
             </div>
           </div>
-          </div>
+          </div> -->
           <!-- <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-warning o-hidden h-100">
               <div class="card-body">

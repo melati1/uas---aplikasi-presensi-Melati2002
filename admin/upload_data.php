@@ -15,7 +15,7 @@ require('connect_db.php');
                       die ("Query gagal dijalankan: ".mysqli_errno($conn).
                            " - ".mysqli_error($conn));
                   } else {
-                    echo "<script>alert('Data berhasil ditambah.');window.location='mahasiswa.php';</script>";
+                    echo "<script>alert('Data berhasil ditambah.');window.location='table_mahasiswa.php';</script>";
                   }
 
   

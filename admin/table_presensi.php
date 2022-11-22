@@ -78,19 +78,24 @@ if ($cek2 > 0) {
     ?>
                     
 
+                    <img src="images/logo.jpg" alt="" width="32" height="32"
+                        class="rounded-circle me-2">
+
                     <strong><?php echo $_SESSION['name'] ?></strong>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
 
-                        <a class="dropdown-item" href='form_edit_user.php?email=<?php echo $row2['email'] ?>'>
+                        <a class="dropdown-item" href='form_update_user.php?email=<?php echo $row2['email'] ?>'>
                             <?php echo $_SESSION['role'] ?>
                         </a>
+
+                        <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="index.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        </div>
                         <?php
 }
 ?>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                    </div>
+                        
             </li>
         </ul>
 
@@ -101,7 +106,7 @@ if ($cek2 > 0) {
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="Admin.php">
+                <a class="nav-link" href="page_admin.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -112,7 +117,7 @@ if ($_SESSION['role'] == "Admin") {
 
     ?>
             <li class="nav-item">
-                <a class="nav-link" href="tables_user.php">
+                <a class="nav-link" href="table_user.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Users</span></a>
             </li>
@@ -120,12 +125,12 @@ if ($_SESSION['role'] == "Admin") {
 }
 ?>
             <li class="nav-item">
-                <a class="nav-link" href="mahasiswa.php.php">
+                <a class="nav-link" href="table_mahasiswa.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Mahasiswa</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="tables-presensi.php">
+                <a class="nav-link" href="table_presensi.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Presensi</span></a>
             </li>
@@ -165,6 +170,7 @@ if ($_SESSION['role'] == "Admin") {
                                         <th>NIM</th>
                                         <th>Nama</th>
                                         <th>Status Presensi</th>
+                                        <th>Action</th>
                                         <!-- <th>Photo</th>
                                         <th>Stock</th>
 
@@ -174,7 +180,7 @@ if ($_SESSION['role'] == "Admin") {
 
                                     </tr>
                                 </thead>
-                                <tfoot>
+                                <!-- <tfoot>
                                     <tr>
                                         <th>Tanggal Presensi</th>
                                         <th>Makul</th>
@@ -182,14 +188,14 @@ if ($_SESSION['role'] == "Admin") {
                                         <th>NIM</th>
                                         <th>Nama</th>
                                         <th>Status Presensi</th>
-                                        <!-- <th>Photo</th>
+                                        <th>Photo</th>
                                         <th>Stock</th>
 
                                         <th>Date Modified</th>
 
-                                         -->
+                                         
                                     </tr>
-                                </tfoot>
+                                </tfoot> -->
 
                                 <tbody>
                                     <?php
@@ -206,6 +212,10 @@ if (mysqli_num_rows($result) > 0) {
 
                                         <td><?php echo $row['nama'] ?></td>
                                         <td><?php echo $row['status_presensi'] ?></td>
+                                        <td>
+                                        <a href='form_update_user.php?email=<?php echo $row['email'] ?>'>Edit</a> |  
+                                            <a href='delete_presensi.php?name=<?php echo $row['name'] ?>' onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a>
+                                        </td>
 
 
 
@@ -245,7 +255,7 @@ mysqli_close($conn);
                 <footer class="sticky-footer">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright © Rangga</span>
+                            
                         </div>
                     </div>
                 </footer>
@@ -276,7 +286,7 @@ mysqli_close($conn);
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-primary" href="uas---aplikasi-presensi-Melati2002/index.php">Logout</a>
                 </div>
             </div>
         </div>
